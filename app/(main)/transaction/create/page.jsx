@@ -1,8 +1,16 @@
+import { redirect } from "next/navigation";
+import { auth } from "@clerk/nextjs/server";
 import { getUserAccounts } from "../../../../actions/dashboard";
 import { defaultCategories } from "../../../../components/data/categories";
 import { AddTransactionForm } from "../_components/transaction-form";
 import { getTransaction } from "../../../../actions/transaction";
 export default async function AddTransactionPage({ searchParams }) {
+  // Check authentication first
+  const { userId } = await auth();
+  if (!userId) {
+    redirect("/sign-in");
+  }
+
   const accounts = await getUserAccounts();
   const editId = searchParams?.edit;
 

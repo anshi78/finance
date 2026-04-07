@@ -15,6 +15,7 @@ import {
 
 import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
+import { Progress } from "../../../../components/ui/progress";
 import { updateBudget } from "../../../../actions/budget";
 
 export function BudgetProgress({ initialBudget, currentExpenses }) {
@@ -126,8 +127,7 @@ export function BudgetProgress({ initialBudget, currentExpenses }) {
           <div className="space-y-2">
             <Progress
               value={percentUsed}
-              extraStyles={`${
-                // add to Progress component
+              indicatorClassName={`${
                 percentUsed >= 90
                   ? "bg-red-500"
                   : percentUsed >= 75

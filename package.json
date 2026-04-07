@@ -13,6 +13,7 @@
   "dependencies": {
     "@arcjet/next": "^1.0.0-beta.6",
     "@bufbuild/protobuf": "^2.6.2",
+    "@clerk/backend": "^3.2.7",
     "@clerk/nextjs": "^6.35.0",
     "@connectrpc/connect": "^2.0.2",
     "@connectrpc/connect-web": "^2.0.3",
@@ -58,9 +59,10 @@
     "email": "0.2.6",
     "eslint": "^9",
     "eslint-config-next": "15.3.0",
-    "prisma": "^6.13.0",
+    "prisma": "^6.19.3",
     "react": "^18.3.1",
     "react-email": "4.0.7",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "typescript": "6.0.2"
   }
 }

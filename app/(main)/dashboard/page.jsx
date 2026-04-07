@@ -1,5 +1,7 @@
 "use server";
 import { Suspense } from "react";
+import { redirect } from "next/navigation";
+import { auth } from "@clerk/nextjs/server";
 import { getUserAccounts, getDashboardData } from "../../../actions/dashboard";
 
 import { updateBudget, getCurrentBudget } from "../../../actions/budget";
@@ -15,6 +17,12 @@ import { DashboardOverview } from "./_components/transaction-overview";
 
 
 export default async function DashboardPage() {
+  // Check authentication first
+  const { userId } = await auth();
+  if (!userId) {
+    redirect("/sign-in");
+  }
+
   let accounts = [];
   let dashboardData = { transactions: [] };
   let budgetData = null;
