@@ -1,4 +1,4 @@
-# Welth - Personal Finance Dashboard
+# Finance - Personal Finance Dashboard
 
 A modern personal finance management app built with Next.js, Prisma, and Clerk for authentication.
 
